@@ -1,5 +1,5 @@
 import { AxiosInstance } from 'axios';
-import { NewsGateway } from '@/domain/gateways/news.gateway';
+import { NewsGateway } from '@/src/app/@core/domain/gateways/news.gateway';
 import { News } from '../../domain/entities/news';
 
 export class NewsHttpGateway implements NewsGateway {

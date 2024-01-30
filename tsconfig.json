@@ -19,9 +19,9 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@/application/*": ["./src/@core/application/*"],
-      "@/domain/*": ["./src/@core/domain/*"],
-      "@/infra/*": ["./src/@core/infra/*"],
+      "@/application/*": ["./src/app/@core/application/*"],
+      "@/domain/*": ["./src/app/@core/domain/*"],
+      "@/infra/*": ["./src/app/@core/infra/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

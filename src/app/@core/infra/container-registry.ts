@@ -1,8 +1,8 @@
 // import 'reflect-metadata';
 import { Container } from 'inversify';
-import { ListNewsUseCase } from '@/application/news/list-news.use-case';
-import { NewsHttpGateway } from '@/infra/gateways/news-http.gateway';
-import { http } from '@/infra/http';
+import { ListNewsUseCase } from '@/src/app/@core/application/news/list-news.use-case';
+import { NewsHttpGateway } from '@/src/app/@core/infra/gateways/news-http.gateway';
+import { http } from '@/src/app/@core/infra/http';
 
 export const Registry = {
   AxiosAdapter: Symbol.for('AxiosAdapter'),

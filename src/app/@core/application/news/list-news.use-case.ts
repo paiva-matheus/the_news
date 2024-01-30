@@ -1,5 +1,5 @@
-import { News } from '@/domain/entities/news';
-import { NewsGateway } from '@/domain/gateways/news.gateway';
+import { News } from '@/src/app/@core/domain/entities/news';
+import { NewsGateway } from '@/src/app/@core/domain/gateways/news.gateway';
 
 const access_key = process.env.ACCESS_KEY ?? '';
 
