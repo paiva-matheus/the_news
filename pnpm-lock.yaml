@@ -11,6 +11,9 @@ dependencies:
   axios:
     specifier: ^1.6.7
     version: 1.6.7
+  inversify:
+    specifier: ^6.0.2
+    version: 6.0.2
   next:
     specifier: 14.1.0
     version: 14.1.0(@babel/core@7.23.9)(react-dom@18.2.0)(react@18.2.0)
@@ -3102,6 +3105,10 @@ packages:
       hasown: 2.0.0
       side-channel: 1.0.4
     dev: true
+
+  /inversify@6.0.2:
+    resolution: {integrity: sha512-i9m8j/7YIv4mDuYXUAcrpKPSaju/CIly9AHK5jvCBeoiM/2KEsuCQTTP+rzSWWpLYWRukdXFSl6ZTk2/uumbiA==}
+    dev: false
 
   /is-arguments@1.1.1:
     resolution: {integrity: sha512-8Q7EARjzEnKpt/PCD7e1cgUS0a6X8u5tdSiMqXhojOdoV9TsMsiO+9VLC5vAmO8N7/GmXn7yjR8qnA6bVAEzfA==}
