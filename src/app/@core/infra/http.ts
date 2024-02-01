@@ -1,5 +1,8 @@
 import axios from 'axios';
 
 export const http = axios.create({
-  baseURL: process.env.BASE_URL
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+  headers: {
+    Authorization: process.env.NEXT_PUBLIC_ACCESS_KEY
+  }
 });

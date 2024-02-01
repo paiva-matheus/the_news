@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { Header } from '@/components/header';
+import { ThemeModeScript } from 'flowbite-react';
+import ReactQueryProvider from './Providers/react-query-provider';
 
 export const metadata: Metadata = {
   title: 'The News',
@@ -14,9 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <ThemeModeScript />
+      </head>
       <body>
-        <Header />
-        {children}
+        <ReactQueryProvider>
+          <Header />
+          <div>{children}</div>
+        </ReactQueryProvider>
       </body>
     </html>
   );

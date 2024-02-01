@@ -1,12 +1,11 @@
 export type NewsDTO = {
   title: string;
   description: string;
-  url: string;
+  content: string;
   source: string;
+  url: string;
   image: string;
-  category: string;
-  language: string;
-  country: string;
+  author: string;
   publishedAt: Date;
 };
 
@@ -29,20 +28,16 @@ export class News {
     return this.props.source;
   }
 
-  get category() {
-    return this.props.category;
+  get content() {
+    return this.props.content;
   }
 
   get image() {
     return this.props.image;
   }
 
-  get language() {
-    return this.props.language;
-  }
-
-  get country() {
-    return this.props.country;
+  get author() {
+    return this.props.author;
   }
 
   get publishedAt() {
@@ -55,10 +50,9 @@ export class News {
       description: this.description,
       url: this.url,
       source: this.source,
-      category: this.category,
+      author: this.author,
       image: this.image,
-      language: this.language,
-      country: this.country,
+      content: this.content,
       publishedAt: this.publishedAt
     };
   }
