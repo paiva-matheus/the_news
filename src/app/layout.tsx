@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
-import { Header } from '@/components/header';
+import { Header } from '@/src/app/components/header';
 import { ThemeModeScript } from 'flowbite-react';
-import ReactQueryProvider from './Providers/react-query-provider';
+import ReactQueryProvider from '@/providers/react-query-provider';
 
 export const metadata: Metadata = {
   title: 'The News',

@@ -1,13 +1,13 @@
 import {
   NewsGateway,
   NewsWithTotalRecords
-} from '@/src/app/@core/domain/gateways/news.gateway';
-export class ListNewsUseCase {
+} from '@/domain/gateways/news.gateway';
+export class SearchNewsUseCase {
   constructor(private newsGate: NewsGateway) {}
 
   async execute(params?: {
     [key: string]: string | number;
   }): Promise<NewsWithTotalRecords> {
-    return this.newsGate.listAll(params);
+    return this.newsGate.search(params);
   }
 }

@@ -1,10 +1,14 @@
 'use client';
 import { useState } from 'react';
-import { Registry, container } from '../@core/infra/container-registry';
-import { ListNewsUseCase } from '../@core/application/news/list-news.use-case';
+import { Registry, container } from '@/infra/container-registry';
+import { ListNewsUseCase } from '@/application/news/list-news.use-case';
 import { useQuery } from '@tanstack/react-query';
 
-export function useListTopHeadlines() {
+interface UseListTopHeadlinesProps {
+  params: { [key: string]: string | number };
+}
+
+export function useListTopHeadlines({ params }: UseListTopHeadlinesProps) {
   const [totalResults, setTotalResults] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
   const [perPage] = useState<number>(9);
@@ -31,8 +35,8 @@ export function useListTopHeadlines() {
   };
 
   const { data, isFetching } = useQuery({
-    queryKey: ['topHeadlines', query],
-    queryFn: () => fetchTopHeadlines(query),
+    queryKey: ['topHeadlines', query, params],
+    queryFn: () => fetchTopHeadlines({ ...query, ...params }),
     enabled: true,
     initialData: [],
     refetchInterval: 12000000,

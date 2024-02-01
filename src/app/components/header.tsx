@@ -45,34 +45,34 @@ export function Header() {
       <Navbar.Toggle />
       <Navbar.Collapse style={{ alignItems: 'center' }}>
         <Navbar.Link href="/categories/general" active={activeRoute('general')}>
-          Geral
+          General
         </Navbar.Link>
         <Navbar.Link
           href="/categories/business"
           active={activeRoute('business')}
         >
-          Negócios
+          Business
         </Navbar.Link>
         <Navbar.Link
           href="/categories/entertainment"
           active={activeRoute('entertainment')}
         >
-          Entreterimento
+          Entertainment
         </Navbar.Link>
         <Navbar.Link href="/categories/health" active={activeRoute('health')}>
-          Saúde
+          Health
         </Navbar.Link>
         <Navbar.Link href="/categories/science" active={activeRoute('science')}>
-          Ciência
+          Science
         </Navbar.Link>
         <Navbar.Link href="/categories/sports" active={activeRoute('sports')}>
-          Esportes
+          Sports
         </Navbar.Link>
         <Navbar.Link
           href="/categories/technology"
           active={activeRoute('technology')}
         >
-          Tecnologia
+          Technology
         </Navbar.Link>
         <DarkThemeToggle className="md:hidden" />
       </Navbar.Collapse>
