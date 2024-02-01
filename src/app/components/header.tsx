@@ -2,7 +2,6 @@
 import { Navbar, DarkThemeToggle } from 'flowbite-react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useMediaQuery } from 'react-responsive';
 import { Pacifico } from 'next/font/google';
 
 const pacifico = Pacifico({
@@ -13,8 +12,8 @@ const pacifico = Pacifico({
 });
 
 export function Header() {
-  const isDesktop = useMediaQuery({ query: '(min-width: 1300px)' });
   const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   const activeRoute = (category: string) => {
     return pathname.includes(category);
@@ -29,11 +28,19 @@ export function Header() {
           height={30}
           className="mr-2 h-6 sm:h-9"
         />
-        <span
-          className={`${pacifico.className} self-center whitespace-nowrap text-xl font-semibold dark:text-white`}
-        >
-          TheNews
-        </span>
+        {isHomePage ? (
+          <h1
+            className={`${pacifico.className} self-center whitespace-nowrap text-xl font-semibold dark:text-white`}
+          >
+            TheNews
+          </h1>
+        ) : (
+          <span
+            className={`${pacifico.className} self-center whitespace-nowrap text-xl font-semibold dark:text-white`}
+          >
+            TheNews
+          </span>
+        )}
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse style={{ alignItems: 'center' }}>
@@ -67,9 +74,9 @@ export function Header() {
         >
           Tecnologia
         </Navbar.Link>
-        {!isDesktop ? <DarkThemeToggle /> : null}
+        <DarkThemeToggle className="md:hidden" />
       </Navbar.Collapse>
-      {isDesktop ? <DarkThemeToggle /> : null}
+      <DarkThemeToggle className="hidden md:block" />
     </Navbar>
   );
 }
