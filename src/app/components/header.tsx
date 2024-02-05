@@ -30,20 +30,20 @@ export function Header() {
         />
         {isHomePage ? (
           <h1
-            className={`${pacifico.className} self-center whitespace-nowrap text-xl font-semibold dark:text-white`}
+            className={`${pacifico.className} self-center whitespace-nowrap text-xl text-slate-700 font-semibold dark:text-white`}
           >
             TheNews
           </h1>
         ) : (
           <span
-            className={`${pacifico.className} self-center whitespace-nowrap text-xl font-semibold dark:text-white`}
+            className={`${pacifico.className} self-center whitespace-nowrap text-xl text-slate-700 font-semibold dark:text-white`}
           >
             TheNews
           </span>
         )}
       </Navbar.Brand>
       <Navbar.Toggle />
-      <Navbar.Collapse style={{ alignItems: 'center' }}>
+      <Navbar.Collapse style={{}}>
         <Navbar.Link href="/categories/general" active={activeRoute('general')}>
           General
         </Navbar.Link>
@@ -59,7 +59,11 @@ export function Header() {
         >
           Entertainment
         </Navbar.Link>
-        <Navbar.Link href="/categories/health" active={activeRoute('health')}>
+        <Navbar.Link
+          href="/categories/health"
+          active={activeRoute('health')}
+          style={{ height: '8px' }}
+        >
           Health
         </Navbar.Link>
         <Navbar.Link href="/categories/science" active={activeRoute('science')}>
@@ -74,7 +78,9 @@ export function Header() {
         >
           Technology
         </Navbar.Link>
-        <DarkThemeToggle className="md:hidden" />
+        <li>
+          <DarkThemeToggle className="md:hidden" />
+        </li>
       </Navbar.Collapse>
       <DarkThemeToggle className="hidden md:block" />
     </Navbar>

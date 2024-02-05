@@ -18,7 +18,7 @@ export function Footer() {
             src="/logo.png"
             alt="The News Logo"
             name="The News"
-            className={`${pacifico.className}`}
+            className={`${pacifico.className} text-slate-700`}
           />
           <FlowbiteFooter.LinkGroup>
             <FlowbiteFooter.Link href="#">About</FlowbiteFooter.Link>
