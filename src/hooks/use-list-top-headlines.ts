@@ -4,11 +4,9 @@ import { Registry, container } from '@/infra/container-registry';
 import { ListNewsUseCase } from '@/application/news/list-news.use-case';
 import { useQuery } from '@tanstack/react-query';
 
-interface UseListTopHeadlinesProps {
-  params: { [key: string]: string | number };
-}
+type FetchTopHeadlinesParams = { [key: string]: string | number };
 
-export function useListTopHeadlines({ params }: UseListTopHeadlinesProps) {
+export function useListTopHeadlines(params: FetchTopHeadlinesParams) {
   const [totalResults, setTotalResults] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
   const [perPage] = useState<number>(9);
@@ -18,10 +16,9 @@ export function useListTopHeadlines({ params }: UseListTopHeadlinesProps) {
     Registry.ListNewsUseCase
   );
 
-  const fetchTopHeadlines = async (query: {
-    [key: string]: string | number;
-  }) => {
+  const fetchTopHeadlines = async (query: FetchTopHeadlinesParams) => {
     const data = await listNewsUseCase.execute(query);
+    console.log(data);
     setTotalResults(data.totalResults);
 
     setTotalPages(Math.ceil(data.totalResults / perPage));
