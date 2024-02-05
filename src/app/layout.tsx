@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import { Header } from '@/src/app/components/header';
 import { ThemeModeScript } from 'flowbite-react';
 import ReactQueryProvider from '@/providers/react-query-provider';
+import { Footer } from './components/footer';
 
 export const metadata: Metadata = {
   title: 'The News',
@@ -24,6 +25,7 @@ export default function RootLayout({
           <Header />
           <div>{children}</div>
         </ReactQueryProvider>
+        <Footer />
       </body>
     </html>
   );
