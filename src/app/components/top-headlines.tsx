@@ -12,7 +12,7 @@ export function TopHeadlines() {
     totalPages,
     totalResults,
     isFetching
-  } = useListTopHeadlines({ params: {} });
+  } = useListTopHeadlines({});
 
   return (
     <section className="w-full max-w-[1220px]">

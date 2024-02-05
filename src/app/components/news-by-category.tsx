@@ -16,7 +16,7 @@ export function NewsByCategory({ category }: NewsByCategoryProps) {
     totalPages,
     totalResults,
     isFetching
-  } = useListTopHeadlines({ params: params });
+  } = useListTopHeadlines(params);
 
   return (
     <section className="w-full max-w-[1220px] mt-8">
