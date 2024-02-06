@@ -4,6 +4,7 @@ import { SearchInput } from '@/components/search-input';
 import { useSearchNews } from '@/hooks/use-search-news';
 import { SearchResults } from '@/components/search-results';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 export default function SearchPage() {
   const searchParams = useSearchParams();
@@ -21,17 +22,18 @@ export default function SearchPage() {
 
   return (
     <main className="flex flex-col items-center p-8 dark:bg-gray-800">
-      <SearchInput search={search} setSearch={setSearch} />
-
-      <SearchResults
-        isFetching={isFetching}
-        page={page}
-        results={results}
-        setCurrentPage={setCurrentPage}
-        totalPages={totalPages}
-        totalResults={totalResults}
-        search={search}
-      />
+      <Suspense>
+        <SearchInput search={search} setSearch={setSearch} />
+        <SearchResults
+          isFetching={isFetching}
+          page={page}
+          results={results}
+          setCurrentPage={setCurrentPage}
+          totalPages={totalPages}
+          totalResults={totalResults}
+          search={search}
+        />
+      </Suspense>
     </main>
   );
 }
