@@ -9,6 +9,7 @@ export function HomeSearchInput() {
   const onClick = () => {
     router.push(`/search?q=${search}`);
   };
+
   return (
     <div className="relative text-gray-600 w-min self-center mx-auto pb-4">
       <input
