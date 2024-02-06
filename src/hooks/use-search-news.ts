@@ -24,15 +24,15 @@ export function useSearchNews(params: FetchSearchParams) {
     return data.news;
   };
 
-  const defaultParams = {
+  const queryParams = {
     page: page,
     pageSize: perPage,
     q: search
   };
 
   const { data, isFetching } = useQuery({
-    queryKey: ['searchNews', params, defaultParams],
-    queryFn: () => fetchSearch({ ...defaultParams, ...params }),
+    queryKey: ['searchNews', params, queryParams],
+    queryFn: () => fetchSearch(queryParams),
     initialData: [],
     refetchOnWindowFocus: false
   });
