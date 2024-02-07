@@ -7,7 +7,7 @@ import { Footer } from './components/footer';
 
 export const metadata: Metadata = {
   title: 'The News',
-  description: 'Notícias do mundo centralizadas em um único lugar'
+  description: 'World news centralized in one place'
 };
 
 export default function RootLayout({
