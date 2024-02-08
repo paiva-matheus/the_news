@@ -42,7 +42,7 @@ export async function generateMetadata({
 
 export default async function CategoryPage({ params }: Params) {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-8 dark:bg-gray-800">
+    <main className="flex min-h-screen flex-col items-center justify-between p-8 bg-slate-100 dark:bg-gray-800">
       <h1
         className={`font-bold text-3xl py-5 text-white ${ptSans.className} ${categoryColors[params.category]} w-full text-center max-w-[1220px]`}
       >

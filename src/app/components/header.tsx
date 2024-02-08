@@ -19,7 +19,7 @@ export function Header() {
     return pathname.includes(category);
   };
   return (
-    <Navbar fluid={true}>
+    <Navbar fluid={true} className="dark:border-b-2 border-white">
       <Navbar.Brand href="/">
         <Image
           src={'/logo.png'}
