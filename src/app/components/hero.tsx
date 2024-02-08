@@ -7,7 +7,7 @@ export async function Hero() {
   );
   const { news } = await listNewsUseCase.execute({
     country: 'us',
-    pageSize: 1
+    pageSize: 5
   });
   const headline = news[0];
 
