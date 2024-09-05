@@ -18,7 +18,6 @@ export function useListTopHeadlines(params: FetchTopHeadlinesParams) {
 
   const fetchTopHeadlines = async (query: FetchTopHeadlinesParams) => {
     const data = await listNewsUseCase.execute(query);
-    console.log(data);
     setTotalResults(data.totalResults);
 
     setTotalPages(Math.ceil(data.totalResults / perPage));
